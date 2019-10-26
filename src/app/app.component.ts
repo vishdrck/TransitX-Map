@@ -16,24 +16,13 @@ export class AppComponent {
   // origin = { lat: 24.799448, lng: 120.979021 }
   // destination = { lat: 24.799524, lng: 120.975017 }
 
-  public origin: any = 'Nugegoda';
-  public destination: any = 'Colombo Pettah';
-  public travelMode: any = 'TRANSIT';
+  public origin: any;
+  public destination: any;
+  public travelMode: any = 'DRIVING';
   public lati: any;
   public langi: any;
   public iconurl: any = 'https://i.imgur.com/r5a9BR4.png';
-  // public arrDataLangi: any = [];
-  // public arrDataLongi: any = [];
-  arrDataLangi = [
-    7.276109,
-    7.274674,
-    7.272000,
-  ];
-  arrDataLongi = [
-    80.615642,
-    80.613383,
-    80.608223
-  ];
+
   public renderOptions = {
     suppressMarkers: true,
   };
@@ -49,16 +38,16 @@ export class AppComponent {
     },
   };
   public onRefresh(num) {
-if (navigator) {
-    navigator.geolocation.getCurrentPosition( pos => {
+    if (navigator) {
+        navigator.geolocation.getCurrentPosition( pos => {
         this.langi = +pos.coords.longitude;
         this.lati = +pos.coords.latitude;
       });
     }
 
       // this.langi = this.arrDataLongi[num];
-      // this.lati = this.arrDataLangi[num];
-  }
+        // this.lati = this.arrDataLangi[num];
+    }
 
   // Sleep method for halt a event for given time
   public sleep(delay) {
@@ -66,7 +55,14 @@ if (navigator) {
     while (new Date().getTime() < start + delay) {; }
   }
 
-  public setRoute() {
-
+  // Set the orgin and the  destination
+  public setRoute(option) {
+    for (let counter = 0; counter < 5 ; counter++) {
+      if ( counter === option) {
+        this.origin = roads[counter].origin;
+        this.destination = roads[counter].destination;
+        break;
+      }
+    }
   }
 }

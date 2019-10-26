@@ -1,24 +1,21 @@
 {"roads":
-    {
-        "01":
+    [
         {
             "origin":"Colombo Pettah",
             "destination":"Kandy"
         },
-        "138":
         {
             "origin":"Colombo Pettah",
             "destination":"Homagama"
         },
-        "155":
         {
             "origin":"Soysapura",
             "destination":"Mattakkuliya"
         },
-        "400":
         {
             "origin":"Colombo Pettah",
             "destination":"Aluthgama"
         }
-    }
+        
+    ]
 }

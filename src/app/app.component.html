@@ -9,12 +9,11 @@
    <agm-marker [latitude]="lati" [longitude]="langi" [iconUrl]="iconurl"></agm-marker>
   </agm-direction>
 </agm-map>
-<script>
-function addNum(){
-  var text = document.getElementById("txt");
-  var num = text.text;
-}
-</script>
-<input type="text" id="txt">
-<input type="button" onclick="addNum()">
+
+ <!-- testing only -->
+<input type="button" (click)="setRoute(0)" value="Set the route 1">
+<input type="button" (click)="setRoute(1)" value="Set the route 2">
+<input type="button" (click)="setRoute(2)" value="Set the route 3">
+<input type="button" (click)="setRoute(3)" value="Set the route 4">
+
 <input type="button" (click)="onRefresh(num)" value="Refresh">
