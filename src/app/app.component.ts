@@ -2,13 +2,21 @@
 // origin=matara&destination=nugegoda&mode=transit&key=AIzaSyD5g_QO7b1pBfgl9OtX6vchzZwX1Vmxo2Y
 import { Component } from '@angular/core';
 import { roads } from './../assests/roads/road.json';
+import { Roads } from './interfaces/roads.app';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
+
 export class AppComponent {
+  roads: Roads[] = [
+    {value: 0, viewValue: 'Route 01'},
+    {value: 1, viewValue: 'Route 138'},
+    {value: 2, viewValue: 'Route 155'},
+    {value: 3, viewValue: 'Route 400'},
+  ];
 
   public lat = 24.799448;
   public lng = 120.979021;
@@ -22,6 +30,8 @@ export class AppComponent {
   public lati: any;
   public langi: any;
   public iconurl: any = 'https://i.imgur.com/r5a9BR4.png';
+
+  public siteTitle = 'TransitX';
 
   public renderOptions = {
     suppressMarkers: true,
@@ -65,4 +75,5 @@ export class AppComponent {
       }
     }
   }
+
 }
