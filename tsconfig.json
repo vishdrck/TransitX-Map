@@ -21,6 +21,9 @@
     "paths": {
       "@angular/*": ["node_modules/@angular/*"],
       "@agm/*": ["node_modules/@agm/*"]
-    }
+    },
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "allowSyntheticDefaultImports": true
   }
 }
