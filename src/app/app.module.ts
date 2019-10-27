@@ -6,6 +6,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AgmCoreModule } from '@agm/core';
 import { AgmDirectionModule } from 'agm-direction';
 import { HttpClientModule } from '@angular/common/http';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { environment } from '../environments/environment';
+
 import {
   MatNativeDateModule,
   MatSnackBarModule,
@@ -27,15 +31,18 @@ import {
   MatListModule,
   MatExpansionModule,
   MatProgressBarModule,
-  MatOption,
+  MatOptionModule,
+  MatSelectModule,
 MatTreeModule,
 MatChipsModule,
 MatBottomSheetModule} from '@angular/material'; // import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CrudComponent } from './crud/crud.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CrudComponent
   ],
   imports: [
     BrowserModule,
@@ -46,6 +53,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     BrowserAnimationsModule,
     HttpClientModule,
     AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebase), // Main Angular fire module 
+    AngularFireDatabaseModule,  // Firebase database module 
     MatTabsModule,
         MatNativeDateModule,
         MatSnackBarModule,
@@ -62,7 +71,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatFormFieldModule,
         MatProgressSpinnerModule,
         MatInputModule,
-        MatOption,
+        MatOptionModule,
         MatPaginatorModule,
         MatMenuModule,
         MatTooltipModule,
@@ -73,7 +82,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
         MatTreeModule,
         MatChipsModule,
         MatDialogModule,
-        MatBottomSheetModule
+        MatBottomSheetModule,
+        MatSelectModule
   ],
   exports: [MatTabsModule,
     MatNativeDateModule,
@@ -86,7 +96,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatCheckboxModule,
     MatToolbarModule,
     MatCardModule,
-    MatOption,
+    MatOptionModule,
     MatTableModule,
     MatTabsModule,
     MatFormFieldModule,
@@ -102,7 +112,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatTreeModule,
     MatChipsModule,
     MatDialogModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
+    MatSelectModule
 ],
   providers: [],
   bootstrap: [AppComponent]

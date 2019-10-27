@@ -5,6 +5,14 @@
 export const environment = {
   production: false,
   googleAPIKey: 'AIzaSyD5g_QO7b1pBfgl9OtX6vchzZwX1Vmxo2Y',
+  firebase: {
+    apiKey: 'AIzaSyAkf6u86n0hdFpwHeTDtT6Qq-no_4Cy3-s',
+    authDomain: 'transitx-ec55f.firebaseapp.com',
+    databaseURL: 'https://transitx-ec55f.firebaseio.com',
+    projectId: 'transitx-ec55f',
+    storageBucket: 'transitx-ec55f.appspot.com',
+    messagingSenderId: 'G-6MG6J2P8T2'
+}
 };
 
 /*

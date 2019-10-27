@@ -1,3 +1,15 @@
 agm-map {
   height: 100vh;
 }
+mat-sidenav {
+  width: 300px;
+ }
+mat-form-field {
+  padding-top: 10px;
+  padding-left: 30px;
+}
+
+h4 {
+  padding-top: 10px;
+  padding-left: 30px;
+}

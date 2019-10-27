@@ -5,20 +5,16 @@
     </button>
     <h1>{{siteTitle}}</h1>
     <span class="menu-spacer"></span>
-    <div>
-      <a mat-button> Accounts </a>
+    <!-- <div> -->
+      <!-- <a mat-button> Accounts </a>
       <a mat-button> Create Account </a>
-      <a mat-button> Contacts </a>
+      <a mat-button> Contacts </a> -->
       <!-- <a mat-button [routerLink]="'/create-contact'"> Create Contact </a>
       <a mat-button [routerLink]="'/activities'"> Activities </a>
       <a mat-button [routerLink]="'/create-activity'"> Create Activity </a> -->
 
-    </div>
+    <!-- </div> -->
   </mat-toolbar-row>
-
-  <mat-toolbar-row>
-      <span style="font-size: 12px;">SimpleCRM helps you easily manage your contacts</span>
-    </mat-toolbar-row>
 </mat-toolbar>
 <mat-sidenav-container>
   <mat-sidenav #sidenav>
@@ -32,11 +28,22 @@
       <!-- <a mat-list-item (click)="sidenav.toggle()" href="" mat-list-item>Close</a> -->
      
     <!-- </mat-nav-list> -->
-    <mat-form-field>
-        <mat-select placeholder="Select">
-          <mat-option value="option">Option</mat-option>
-        </mat-select>
-      </mat-form-field>
+    <h4>Select your Route to proceed next</h4>
+    <mat-form-field style="width: 80%;padding-right: 10px;">
+      <mat-label class="mat-lable">Available Routes</mat-label>
+      <mat-select (selectionChange)="onSelection($event)">
+        <mat-option *ngFor="let road of roads" [value]="road.value">
+          {{road.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+    <div *ngIf="isSelectedOption">
+        <mat-label style="padding-left: 30px;padding-top: 20px;">Route Origin</mat-label><br><br>
+        <mat-label style="padding-left: 30px;padding-top: 50px;font-size: 15px;font-style: italic;">{{origin}}</mat-label><br><br>
+        <mat-label style="padding-left: 30px;padding-top: 20px;">Route Destination</mat-label><br><br>
+        <mat-label style="padding-left: 30px;padding-top: 50px;font-size: 15px;font-style: italic;">{{destination}}</mat-label><br><br>
+
+      </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <div style="height: 88vh;">
@@ -57,7 +64,7 @@
       <input type="button" (click)="setRoute(0)" value="Set the route 1">
       <input type="button" (click)="setRoute(1)" value="Set the route 2">
       <input type="button" (click)="setRoute(2)" value="Set the route 3">
-      <input type="button" (click)="setRoute(3)" value="Set the route 4">
+      <input type="button" (click)="method1()" value="Set the route 4">
       
       <input type="button" (click)="onRefresh(num)" value="Refresh">
     </div>
